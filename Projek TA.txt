@@ -1,0 +1,28 @@
+Projek
+
+
+Tiket 
+
+
+1) habis pilih tiket di list_tiket.php maka nanti akan diarahkan ke halaman tiket.php dengan menampilkan data dari tiket yg dipilih di list_tiket.php
+
+
+2) setelah itu di tiket.php dapat mengisi jumlah penumpang, tanggal berangkat dan pulang, memilih kursi serta dapat memilih hotel di bagian pesan hotel tetapi buatkan agar hotel tidak otomatis terisi (di bagian hotelnya selalu terisi pilihan hotel sebelumnya dah tidak bisa dihilangkan) tolong buat supaya jika user memilih hotel saja baru akan ditampilkan di bagian hotelnya jika tidak jadi memilih maka cukup tekan tombol cancel jika ingin menghapus hotel yg dipilih
+
+
+3) jika user pilih hotel maka akan diarahkan ke hotel.php terlebih dahulu dan terdapat 2 pilihan hotel antara pramakamar.php dan merukamar.php, jika user memilih salah satu dari hotelnya dan memilih kamar dengan cara menekan tombol pilih maka nanti akan tampil di tiket.php ( tolong buatin supaya harga diskon dari list_tiket.php mengefek harga hotelnya juga jadi tidak manual mengisi diskonya) dan jika kamar hotel sudah dipilih maka sisa kamarnya berkurang dan jika 0 maka tidak bisa memilih jenis kamar/hotel itu lagi
+
+
+4) jika user udah selesai mengisi data tiket dan hotel maka nanti akan tampil rincian tiket dan hotelnya itu di isi_nama.php jika user gak pilih hotel maka gak akan tampil hotelnya, dan setelah selesai isi nama nanti diarahkan ke pembayaran.php
+
+
+5) di pembayaran.php maka akan menampilkan semua data yaitu tiket, hotel, nama, dan kalo udah sesuai dan menekan pembayaran disini aku pake midtran (kodenya ada di githubnya), selesai pembayaran nanti dibuatin invoice tiket gitu yg nampilin kayak di pembayaran.php itu yg bisa di print atau kembali ke beranda
+
+
+6) nanti user bisa liat histori pembelian di bagian purchase.php (tapi belum tak bikin) dan bisa di print juga
+
+
+7) nanti pas di admin bisa nge liat tiket yg dipesan user di bagian pembelian_tiket.php dan di pemesanan_hotel.php bisa melihat berapa banyak user yg memesan hotel tersebut dan nanti datanya dibuatkan tabel kayak nampilin akun user itu dan bisa di print pdf
+
+
+8) tolong juga buatin biar untuk login untuk admin nanti hanya bisa ke bagian admin dengan make role admin dan awalan password itu GA, superadmin itu dengan awalan SGA, user bebas selama dibuat role user (kalo soal login ini kalo bisa dibikinin terima kasih bgt kalo gak gpp yg penting alur tiketnya itu dulu makasih)
