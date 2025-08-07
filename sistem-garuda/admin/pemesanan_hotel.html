@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel Admin</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 p-6 font-sans">
+    <h1 class="text-2xl font-bold mb-6 text-gray-700">Admin Hotel</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Hotel Merusanur -->
+      <div class="bg-white rounded-2xl shadow p-5">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">
+          Hotel Merusanur
+        </h2>
+        <p class="text-gray-600 mb-2">
+          Jumlah Pemesan:
+          <span id="pemesanMerusanur" class="font-bold text-blue-600">0</span>
+        </p>
+        <img
+          id="imgMerusanur"
+          src="../gambar/meru sanur.webp"
+          alt="Hotel Merusanur"
+          class="rounded-xl w-full h-48 object-cover mb-3"
+        />
+        <!-- Disembunyikan -->
+        <input
+          type="file"
+          accept="image/*"
+          onchange="gantiGambar(event, 'Merusanur')"
+          class="mt-2 text-sm hidden"
+        />
+      </div>
+
+      <!-- Hotel Prama -->
+      <div class="bg-white rounded-2xl shadow p-5">
+        <h2 class="text-xl font-semibold text-gray-800 mb-2">Hotel Prama</h2>
+        <p class="text-gray-600 mb-2">
+          Jumlah Pemesan:
+          <span id="pemesanPrama" class="font-bold text-blue-600">0</span>
+        </p>
+        <img
+          id="imgPrama"
+          src="../gambar/prama hotel sanur.jpeg"
+          alt="Hotel Prama"
+          class="rounded-xl w-full h-48 object-cover mb-3"
+        />
+        <!-- Disembunyikan -->
+        <input
+          type="file"
+          accept="image/*"
+          onchange="gantiGambar(event, 'Prama')"
+          class="mt-2 text-sm hidden"
+        />
+      </div>
+    </div>
+
+    <script>
+      const dataHotel = {
+        merusanur: 25,
+        prama: 18,
+      };
+
+      document.getElementById("pemesanMerusanur").textContent =
+        dataHotel.merusanur;
+      document.getElementById("pemesanPrama").textContent = dataHotel.prama;
+
+      // Load gambar dari localStorage jika ada
+      window.onload = function () {
+        const imgMerusanur = localStorage.getItem("imgMerusanur");
+        const imgPrama = localStorage.getItem("imgPrama");
+        if (imgMerusanur)
+          document.getElementById("imgMerusanur").src = imgMerusanur;
+        if (imgPrama) document.getElementById("imgPrama").src = imgPrama;
+      };
+
+      // Fungsi ganti gambar (masih ada, walau input disembunyikan)
+      function gantiGambar(event, hotel) {
+        const reader = new FileReader();
+        reader.onload = function () {
+          const base64 = reader.result;
+          document.getElementById("img" + hotel).src = base64;
+          localStorage.setItem("img" + hotel, base64);
+          alert("Gambar Hotel " + hotel + " berhasil diganti!");
+        };
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+  </body>
+</html>
